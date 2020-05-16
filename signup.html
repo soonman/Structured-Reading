@@ -3,23 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Signup</title>
   </head>
+
   <body>
     <div>
-      <p>Structured Reading</p>
+      Email
+      <input type="email" class="email_value" />
     </div>
-    <div>
-      <div>
-        <input class="sign_in_value" type="text" />
-      </div>
 
-      <input class="sign_up_value" type="password" />
-      <button class="sign_in_button">sign in</button>
-    </div>
     <div>
-      <button class="sign_up_button">sign up</button>
+      Password
+      <input type="password" class="password_value" />
     </div>
+    <button type="submit" class="signup_button">sign up</button>
 
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
@@ -28,6 +25,6 @@
       src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"
     ></script>
     <script src="js/config.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/signup.js"></script>
   </body>
 </html>
