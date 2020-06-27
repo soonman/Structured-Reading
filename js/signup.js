@@ -15,7 +15,7 @@ document
       .createUserWithEmailAndPassword(email, password)
       .then(function (response) {
         console.log(response);
-        window.location.href = "./list.html";
+        window.location.href = "./login.html";
       })
       .catch(function (error) {
         console.log("TCL: error", error);
