@@ -9,31 +9,32 @@ document
   .querySelector(".book_name_add_button")
   .addEventListener("click", function (e) {
     e.preventDefault();
-    db.collection("book")
-      .add({
-        first: "Ada",
-        last: "Lovelace",
-        born: 1815,
-      })
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-      })
-      .catch(function (error) {
-        console.error("Error adding document: ", error);
-      });
+    db.collection("book").doc("키로파에디아").set({
+      Volume: "제 1권 : 키루스의 소년 시절",
+      Part: "none",
+      Chapter: "1장",
+    });
+    // .then(function (docRef) {
+    //   console.log("Document written with ID: ", docRef.id);
+    // })
+    // .catch(function (error) {
+    //   console.error("Error adding document: ", error);
+    // });
+  });
+var docRef = db.collection("book").doc("키로파에디아");
+
+docRef
+  .get()
+  .then(function (doc) {
+    if (doc.exists) {
+      console.log("Document data:", doc.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  })
+  .catch(function (error) {
+    console.log("Error getting document:", error);
   });
 
-// db.collection("book")
-//   .get()
-//   .then((querySnapshot) => {
-//     querySnapshot.forEach((doc) => {
-//       console.log(`${doc.id} => ${doc.data()}`);
-//     });
-//   });
-var messageRef = db
-  .collection("rooms")
-  .doc("roomA")
-  .collection("messages")
-  .doc("message1");
-
-messageRef;
+// $("#book_list").append($('<a href="https://www.naver.com"' + "move" + "</a>"));
