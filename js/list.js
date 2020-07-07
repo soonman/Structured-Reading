@@ -23,12 +23,6 @@ document
   });
 var docRef = db.collection("book").doc("키로파에디아");
 
-document
-  .querySelector(".test_value_button")
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-    alert(document.test_value);
-  });
 docRef
   .get()
   .then(function (doc) {
